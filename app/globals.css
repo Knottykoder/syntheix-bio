@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #09090b;
+    --secondary-dark: #121215;
+    --foreground: #f4f4f5;
+    --muted-text: #a1a1aa;
+    --accent-gold: #d6a84f;
+  }
+
+  body {
+    background-color: #09090b;
+    color: #f4f4f5;
+    font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d6a84f;
+}
+
+/* Minimal Typography Helpers */
+.font-serif-cinematic {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-sans-technical {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Subtle Gold Text Accent */
+.gold-text {
+  color: #d6a84f;
+}
+
+/* Clean Minimal Card */
+.minimal-card {
+  background: #121215;
+  border: 1px solid rgba(39, 39, 42, 0.8);
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.minimal-card:hover {
+  border-color: rgba(214, 168, 79, 0.4);
+  background: #18181b;
+}

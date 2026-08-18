@@ -1,0 +1,151 @@
+/* Biotech Landing Page Specific Styles & Animation Utilities */
+
+:root {
+  --bio-bg: #050811;
+  --bio-bg-card: rgba(10, 18, 32, 0.6);
+  --bio-emerald: #00f5a0;
+  --bio-cyan: #00b4d8;
+  --bio-violet: #7b2cbf;
+  --bio-border: rgba(0, 245, 160, 0.15);
+  --bio-border-glow: rgba(0, 245, 160, 0.4);
+}
+
+.biotech-root {
+  background-color: var(--bio-bg);
+  color: #f8fafc;
+  min-height: 100vh;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: #00f5a0;
+  color: #050811;
+}
+
+/* Glassmorphic card styling */
+.bio-glass {
+  background: rgba(10, 20, 36, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 245, 160, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.bio-glass:hover {
+  border-color: rgba(0, 245, 160, 0.35);
+  box-shadow: 0 10px 40px -10px rgba(0, 245, 160, 0.2);
+}
+
+.bio-glass-emerald {
+  background: rgba(0, 245, 160, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 245, 160, 0.25);
+}
+
+.bio-glass-cyan {
+  background: rgba(0, 180, 216, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 180, 216, 0.25);
+}
+
+/* Bioluminescent Gradient Text */
+.text-gradient-bio {
+  background: linear-gradient(135deg, #ffffff 20%, #00f5a0 60%, #00b4d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00f5a0 0%, #00b4d8 60%, #7b2cbf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Bioluminescent Glow Shadows */
+.glow-emerald {
+  box-shadow: 0 0 25px -5px rgba(0, 245, 160, 0.4);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(0, 180, 216, 0.4);
+}
+
+.glow-violet {
+  box-shadow: 0 0 25px -5px rgba(123, 44, 191, 0.4);
+}
+
+/* Grid & Radar Backgrounds */
+.bio-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 245, 160, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 245, 160, 0.04) 1px, transparent 1px);
+}
+
+.bio-dots-bg {
+  background-image: radial-gradient(rgba(0, 245, 160, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Keyframe animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+/* Custom glowing scrollbar for biotech view */
+.biotech-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.biotech-scrollbar::-webkit-scrollbar-track {
+  background: #050811;
+}
+.biotech-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 245, 160, 0.3);
+  border-radius: 9999px;
+}
+.biotech-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #00f5a0;
+}
